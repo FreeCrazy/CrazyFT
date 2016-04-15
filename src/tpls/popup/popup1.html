@@ -1,0 +1,16 @@
+<div class="black-bg" ng-if="popSure.popup">
+</div>
+<div class="popup-cont" ng-if="popSure.popup">
+<!-- 有确定和取消按钮的 -->
+	<div class="popup-box">
+		<label ng-bind="popSure.popText"></label>
+		<dl class="popup-box-dl">
+			<dd>
+				<input type="button" value="确定" ng-click="popSure.change()"></input>
+			</dd>
+			<dd>
+				<input type="button" value="取消" ng-click="popSure.popup=false;"></input>
+			</dd>
+		</dl>
+	</div>
+</div>

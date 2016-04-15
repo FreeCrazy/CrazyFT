@@ -1,0 +1,275 @@
+@import "public";
+@import "element";
+
+.black-bg {
+	background:#000;
+	position:fixed;
+	width:100%;
+	height:100%;
+	z-index:998;
+	opacity:.5;
+  top:0;
+}
+.popup-cont{
+	text-align: nth($text,4);
+    position: fixed;
+    width: 100%;
+    top: 25%;
+    z-index: 999;
+}
+.popup-box {
+	width:200px;
+	height:150px;
+	z-index:1000;
+	background:#e4ebec;
+	border-radius:.5rem;
+	@include pad-vertic(5%,0);
+  position:relative;
+	label {
+		@include pad-center(5%,5%);
+		color: #313131;
+		font-size: 16px;
+		display: block;
+		word-break: break-word;
+		width:90%;
+		height:69%;
+    line-height: 150%;
+	}
+	/*有确定和取消按钮*/
+	.popup-box-dl{
+		width:100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+		dd{
+			display:nth($displays,4);
+			width:49%;
+			text-align: nth($text,4);
+			input{
+				@include button-style;
+        margin-bottom: 0;
+				width:100%;
+			}
+		}
+
+	}
+	/* 只有确定按钮的 */
+	.popup-input{
+		@include button-style;
+		width:100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+    margin-bottom: 0;
+	}
+	/*输入密码框*/
+	.popup-text{
+		@include pad-center(5%,5%);
+		color: #313131;
+		font-size: 16px;
+		display: block;
+		word-break: break-word;
+		width:90%;
+		height:69%;
+		text-align: nth($text,4);
+		position:relative;
+		h2{
+			width:100%;
+			@include vertic(0,5%);
+		}
+		input{
+			width:13%;
+			height:40px;
+			border:0.1rem solid #ccc;
+			position:absolute;
+			display:nth($displays,4);
+			z-index: 1000;
+			top:43%;
+			background:#fff;
+			text-align: center;
+		}
+		.input-1{
+			left:11%;
+			border-top-left-radius: 0.5rem;
+		    border-bottom-left-radius: 0.5rem;
+		}
+		.input-2{
+			left:24%;
+		}
+		.input-3{
+			left:37%;
+		}
+		.input-4{
+			left:50%;
+		}
+		.input-5{
+			left:63%;
+		}
+		.input-6{
+			left:76%;
+			border-top-right-radius: 0.5rem;
+		    border-bottom-right-radius: 0.5rem;
+		}
+	}
+}
+/*加载页面*/
+.loading {
+    z-index: 1000;
+    position: fixed;
+    top:0;
+    left:0;
+    background:#fff;
+    width:100%;
+    min-height:100%;
+}
+.block {
+    width:100%;
+    position:absolute;
+    @include center(auto,auto);
+    @include vertic(25%,10%);
+    text-align: -webkit-center; 
+    label {
+        font-size:16px;
+        color:#fff;
+        font-weight: bolder;
+    }
+}
+.ouro {
+    position: relative;
+    display:inline-block;
+    height: 250px;
+    width: 250px;
+    margin: 1em;
+    border-radius: 50%;  
+    background: #fff;
+    overflow:hidden;
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    z-index: 555;
+
+    /* &:after {
+        content: "加载中...";
+        position: absolute;
+        z-index:999;
+        top: 9px;
+        left: 9px;
+        display: block;
+        height: 230px;
+        width: 230px;
+        font-size: 18px;
+        color: #575756;
+        font-weight: bolder;
+        line-height: 230px;
+        background: #fff;
+        border-radius: 230px;
+        -moz-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+    } */
+    & > span {
+        position: absolute;
+        height: 100%; width: 50%;
+        overflow: hidden;
+    }
+}
+.load-contents {
+    position: relative;
+    background:#fff;
+    z-index:999;
+    margin-top: -258px;
+    display: block;
+    height: 230px;
+    width: 230px;
+    font-size: 18px;
+    color: #575756;
+    font-weight: bolder;
+    line-height: 230px;
+    background: #fff;
+    border-radius: 230px;
+}
+.anim {
+    position: absolute;
+    left: 100%; top: 0;
+    height: 100%; width: 100%;
+    border-radius: 999px;
+    background: none repeat scroll 0 0 #0095d9;
+    opacity: 0.8;
+    -webkit-animation: ui-spinner-rotate-left 3s infinite;
+    animation: ui-spinner-rotate-left 3s infinite;
+    -webkit-transform-origin: 0 50% 0;
+    transform-origin: 0 50% 0;
+}
+.left  { left:0  ; 
+    .anim {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    }
+}
+.right { left:50% ;
+    .anim {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    left: -100%;
+    -webkit-transform-origin: 100% 50% 0;
+    transform-origin: 100% 50% 0;
+    }
+}
+
+.ouro3 .anim {
+   -webkit-animation-delay: 0s;
+   -webkit-animation-duration:3s;
+   -webkit-animation-timing-function: linear;
+   animation-delay: 0s;
+   animation-duration:3s;
+   animation-timing-function: linear;
+}
+.ouro3 .right .anim{
+   -webkit-animation-name: ui-spinner-rotate-right;
+   -webkit-animation-delay:0;
+   -webkit-animation-delay: 1.5s;
+   animation-name: ui-spinner-rotate-right;
+   animation-delay:0;
+   animation-delay: 1.5s;
+}
+
+.load-wait {
+    @include center(auto,auto);
+    @include vertic(120%,0);
+    font-size: 20px;
+    text-align: nth($text,4);
+    color:nth($colors,8);
+    font-weight: bolder;
+}
+
+@keyframes ui-spinner-rotate-right{
+  0%{transform:rotate(0deg)}
+  25%{transform:rotate(180deg)}
+  50%{transform:rotate(180deg)}
+  75%{transform:rotate(360deg)}
+  100%{transform:rotate(360deg)}
+}
+@keyframes ui-spinner-rotate-left{
+  0%{transform:rotate(0deg)}
+  25%{transform:rotate(0deg)}
+  50%{transform:rotate(180deg)}
+  75%{transform:rotate(180deg)}
+  100%{transform:rotate(360deg)}
+}
+
+@-webkit-keyframes ui-spinner-rotate-right{
+  0%{-webkit-transform:rotate(0deg)}
+  25%{-webkit-transform:rotate(180deg)}
+  50%{-webkit-transform:rotate(180deg)}
+  75%{-webkit-transform:rotate(360deg)}
+  100%{-webkit-transform:rotate(360deg)}
+}
+@-webkit-keyframes ui-spinner-rotate-left{
+  0%{-webkit-transform:rotate(0deg)}
+  25%{-webkit-transform:rotate(0deg)}
+  50%{-webkit-transform:rotate(180deg)}
+  75%{-webkit-transform:rotate(180deg)}
+  100%{-webkit-transform:rotate(360deg)}
+}

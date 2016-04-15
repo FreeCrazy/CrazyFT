@@ -1,0 +1,9 @@
+<div class="black-bg" ng-if="popSample.popup">
+</div>
+	<div class="popup-cont" ng-if="popSample.popup">
+	<!-- 只有确定按钮的 -->
+		<div class="popup-box">
+			<label ng-bind="popSample.popText"></label>
+			<input type="button" value="确定" class="popup-input" ng-click="popSample.change()"></input>
+		</div>
+	</div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>FreeCrazy</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- ===================Load CSS=================================== -->
+    <link rel="stylesheet" href="csslib/main.min.css">   
+  </head>
+
+  <body>
+    <!-- 模板加载元素 -->
+    <div ui-view class="ui-view-style"></div>
+    <!-- 只有确认弹窗元素 -->
+    <compop></compop>
+    <!-- 有确认和取消弹窗元素 -->
+    <compopsure></compopsure>  
+    <!-- 加载等待元素 -->
+    <wait-rpc></wait-rpc>
+    <!-- 密码弹窗元素 -->
+    <grid-password is-show="gridPassword.showInput"></grid-password>
+    <!-- ===================Load Javascript============================ -->
+	  <script data-main="./js/main.js" src="public/js/requirejs/require.js"></script>
+
+  </body>
+</html>

@@ -355,10 +355,10 @@ module.exports = function(grunt) {
           //fileExclusionRegExp: /^\./,
           mainConfigFile: 'src/js/main.js',
           //modules定义要被优化的模块数组。每一项是模块优化的配置，常用的几个参数如下：
-  　　　　//name：模块名；
-  　　　　//create：如果不存在，是否创建。默认 false；
-  　　　　//include：额外引入的模块，和 name 定义的模块一起压缩合并；
-  　　　　//exclude：要排除的模块。有些模块有公共的依赖模块，在合并的时候每个都会压缩进去
+          //name：模块名；
+          //create：如果不存在，是否创建。默认 false；
+          //include：额外引入的模块，和 name 定义的模块一起压缩合并；
+          //exclude：要排除的模块。有些模块有公共的依赖模块，在合并的时候每个都会压缩进去
           modules: [
               {
                   name: "domready",

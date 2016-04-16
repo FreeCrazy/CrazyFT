@@ -1,4 +1,4 @@
-define(['app'], function(app){
+define(["app"], function(app){
   app.controller('BaiduWeatherCtrl', ['$scope', '$http', function($scope, $http) {
     require(["weather"], function(BMap){
       //var city;
